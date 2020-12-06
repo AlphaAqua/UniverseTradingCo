@@ -65,7 +65,8 @@ class ClassShip(ClassUniverseObject):
 
 
 if __name__ == "__main__":
-    myship = ClassShip(5, 7)
-    mybase = ClassShip(0, 0)
-    print(myship.x())
+    myUniverse = Universe
+    myShip = ClassShip(42, 5)
+    myBase = ClassShip(10, 10)
+    print(myShip.x())
 
