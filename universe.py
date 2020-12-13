@@ -31,7 +31,7 @@ class Universe(Singleton):
         if self.positions is None:
             self.__first_object(x, y, direction, speed, fuel, fuel_consumption)
             return 0
-        self.positions = np.append(self.positions, [[x, y]], axis=1)
+        self.positions = np.append(self.positions, [[x, y]], axis=0)
         self.directions = np.append(self.directions, [direction], axis=0)
         self.speeds = np.append(self.speeds, [speed], axis=0)
         self.fuels = np.append(self.fuels, [fuel], axis=0)
