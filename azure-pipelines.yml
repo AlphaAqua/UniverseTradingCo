@@ -26,4 +26,15 @@ stages:
               pip3 install pytest-azurepipelines
               pytest
             displayName: Ubuntu PyTest
-      
+
+
+      - job: Windows
+        pool:
+          vmImage: 'windows-latest'
+        container: alphaaqua/utcbuild:windows
+        steps:
+          - checkout: self
+          - script: |
+              pip3 install pytest-azurepipelines
+              pytest
+            displayName: Windows PyTest
