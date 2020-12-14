@@ -6,13 +6,24 @@ stages:
 
   - stage: Test
     jobs:
-      - job: PyTest
+      - job: ARM
         pool: ARM
         container: alphaaqua/utcbuild:raspbian
         steps:
           - checkout: self
-
           - script: |
-              pip install pytest-azurepipelines
+              pip3 install pytest-azurepipelines
               pytest
-            displayName: 'pytest'
+            displayName: ARM PyTest
+
+      - job: Ubuntu
+        pool:
+          vmImage: 'ubuntu-latest'
+        container: alphaaqua/utcbuild:ubuntu
+        steps:
+          - checkout: self
+          - script: |
+              pip3 install pytest-azurepipelines
+              pytest
+            displayName: Ubuntu PyTest
+      
