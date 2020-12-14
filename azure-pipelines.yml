@@ -2,15 +2,12 @@
 trigger:
   - '*'
 
-#pool:
-#  vmImage: 'ubuntu-latest'
-pool: ARM
-
 stages:
 
   - stage: Test
     jobs:
       - job: PyTest
+        pool: ARM
         container: alphaaqua/utcbuild:raspbian
         steps:
           - checkout: self
